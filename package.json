@@ -1,7 +1,7 @@
 {
-  "name": "sern-stack-backend",
+  "name": "mern-stack-backend",
   "version": "1.0.0",
-  "description": "backend nodejs, express and sequelize",
+  "description": "backend nodejs, express and mongoose",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
