@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const connectToDB = async () => {
   try {
     await mongoose.connect(
-      `mongodb://localhost:27017/${process.env.DB_DATABASE_DEV}`,
+      `${process.env.DB_CONNECTION_STRING}${process.env.DB_DATABASE_DEV}`,
       { useNewUrlParser: true, useUnifiedTopology: true }
     );
     console.log("Connection has been established successfully.");
@@ -14,4 +14,5 @@ const connectToDB = async () => {
     return false;
   }
 };
+
 module.exports = { connectToDB: connectToDB };
