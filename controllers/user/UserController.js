@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
   if (Object.keys(validation_errors).length === 0) {
     const user = await userRepository.FindByEmail(req.body);
     if (user) {
-      res.status(200).json({ message: "Email registered before" });
+      res.status(400).json({ message: "Email registered before" });
     } else {
       (await userRepository.InsertUser(req.body))
         ? res.status(200).json({ message: "Registered Successfully" })
